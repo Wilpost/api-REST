@@ -8,7 +8,7 @@ const SERVICES_ACEPPTEDS = [
 ]
 
 function fixedProblemCors() {
-    return cors({
+  return cors({
     origin: (origin, callback) => {
       if (SERVICES_ACEPPTEDS.includes(origin) || !origin) {
         return callback(null, true)
