@@ -1,7 +1,6 @@
 {
-  "name": "Api-REST",
+  "name": "api-rest",
   "version": "1.0.0",
-  // "type": "ESModules",
   "description": "",
   "main": "index.js",
   "scripts": {
