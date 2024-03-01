@@ -1,0 +1,34 @@
+### Obtener todas las peliculas
+GET http://localhost:3000/movies
+
+### Obtener una pelicula
+GET http://localhost:3000/movies/8fb17ae1-bdfe-45e5-a871-4772d7e526b8
+
+### Obtener peliculas por genero
+GET http://localhost:3000/movies?genre=action
+
+### Obtener los datos por pagina y limite de productos
+GET http://localhost:3000/movies?offset=0&limit=5
+
+### Crear una nueva pelicula
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{
+    "title": "The good Doctor",
+    "year": 2008,
+    "director": "Andres Muschietti",
+    "duration": 213,
+    "poster": "https://i.ebayimg.com/images/g/yokAAOSw8w1YARbm/s-l1200.jpg",
+    "genre": ["Action", "Crime", "Drama"],
+    "rate": 7.2
+}
+
+### Actualizar una movie
+PATCH http://localhost:3000/movies/8fb17ae1-bdfe-45e5-a871-4772d7e526b8
+Content-Type: application/json
+
+{
+  "title": "The oficial Nate",
+  "year": 2008
+}

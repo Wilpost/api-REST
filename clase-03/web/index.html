@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API - REST</title>
+    <style>
+      body {
+        background: #333;
+        box-sizing: border-box;
+        color: white;
+        color-scheme: dark light;
+      }
+
+      article {
+        border: 2px solid #999;
+        padding: 1.5rem;
+        border-radius: 7px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: start;
+        justify-content: center;
+        background-color: #777;
+      }
+    </style>
+    <script type="module">
+      fetch('http://localhost:3000/movies').then(res => {
+        const hmtl = res
+          .map(movie => {
+            return `
+              <article data-id="main">
+                 <img src={${movie.poster}} alt={${movie.title}}} />
+                 <h2>Title : ${movie.title}</h2>
+                 <p>Year : ${movie.year}</p>
+              </article>
+            `
+          })
+          .join('')
+
+        document.querySelector('main').innerHTML = hmtl
+      })
+    </script>
+  </head>
+  <body>
+    <main></main>
+  </body>
+</html>
