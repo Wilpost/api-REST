@@ -1,11 +1,11 @@
 const express = require('express')
 const movies = require('./movies.json')
 const crypto = require('node:crypto')
-const validateData = require('./clase-03/schema/schema')
-const validatePartialData = require('./clase-03/schema/schema')
+const validateData = require('./schema/schema')
+const validatePartialData = require('./schema/schema')
 const fixedProblemCors = require('./utils/cors')
 
-const PORT = process.send.PORT ?? 3000
+const PORT = process.env.PORT ?? 3000
 const app = express()
 
 app.disable('X-Powered-By') // Hide the power
